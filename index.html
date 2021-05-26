@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <main class="main"></main>
+    <script src="/js/loader.js"></script>
+    <script>
+      const WL = new WasmLoader();
+      WL.wasm('/build/optimized.wasm').then(instance => {
+        const { minusOne } = instance;
+        const target = 42;
+        document.write(`My first WASM! ${target} minus one is ${minusOne(target)}`);
+      });
+    </script>
+  </body>
+</html>
